@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import './HighScore.css';
 
 const HighScore = (props) => {
   const [scores] = useState(() => {
@@ -19,7 +20,7 @@ const HighScore = (props) => {
       });
     }
     
-    return scores.sort((a,b) =>  b.score-a.score);
+    return scores.sort((a,b) =>  b.score-a.score).slice(0,5);
   }
     
   );
@@ -29,8 +30,11 @@ const HighScore = (props) => {
   }, [scores]);
   console.log(scores);
 
-  const showScore = scores.map((score)=>
+  const showScore = scores.map((score,index)=>
     (<tr key={score.name}>
+      <td>
+        {index+1}
+      </td>
       <td>
         {score.name}
       </td>
@@ -40,13 +44,18 @@ const HighScore = (props) => {
     </tr>));
   return (
     <div>
-      <h1>Top performers</h1>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Score</th>
-        </tr>
-        {showScore}
+      <h1>Leaderboard</h1>
+      <table className='leaderboard-results'>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {showScore}
+        </tbody>
       </table>
     </div>
   )

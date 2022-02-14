@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import HighScore from './HighScore';
 import './StudentForm.css';
+//import {BsAlarmFill} from 'react-icons/bs'
 
 const StudentForm = ({questions}) => {
 
@@ -27,10 +28,11 @@ const StudentForm = ({questions}) => {
 
   const scoreboard = (
     <>
-      <div>
+      <div className='score-display'>
               You scored {scoreObtained} out of {questions.length}
               
       </div>
+      <hr />
       <HighScore name={name} newScore={scoreObtained}/>
     </>
   )

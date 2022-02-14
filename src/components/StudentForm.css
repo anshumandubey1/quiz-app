@@ -7,10 +7,9 @@
 
 
 
-.loginCard {
-  
+.score-display{
+  font-size: 24px;
 }
-
 .loginCard form input{
   width: 100%;
   padding: 12px 20px;

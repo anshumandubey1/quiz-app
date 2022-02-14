@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Harry Potter';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Harry Potter'), url('https://fonts.cdnfonts.com/s/25438/HARRP___.woff') format('woff');
+  }
+
+  .leaderboard-results{
+    text-align:left;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border-style: hidden; /* hide standard table (collapsed) border */
+    box-shadow: 0 0 0 1px #666; /* this draws the table border  */
+    font-size: 20px;
+    
+    }
+
+  .leaderboard-results thead th {
+    padding: 25px;
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    background:#1a1a1a;
+  }
+  .leaderboard-results tbody td {
+    padding:15px 25px;
+    background: white;
+    font-size:20px;
+    border-bottom:5px solid #232323;
+  }
+  .leaderboard-results tbody td:nth-of-type(7) {
+    font-weight:bold;
+  }
+  .leaderboard-results tbody tr:hover td {
+      background: #5a8eee;
+  }
+  .leaderboard-results tbody tr {
+    color:#888;
+  }
+  .leaderboard-results tbody tr:first-child {
+    color: #363795;
+  }
+
+  h1{
+    text-align: center;
+    font-family: 'Harry Potter', sans-serif;
+  }

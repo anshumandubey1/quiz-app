@@ -1,5 +1,5 @@
 import React from 'react';
-import StudentForm from './StudentForm';
+import StudentForm from './components/StudentForm';
 
 export default function App() {
   const questions = [
@@ -34,26 +34,10 @@ export default function App() {
       answer: '7'
     },
   ];
-
-  const highScores = [
-    {
-      name: 'Anshuman Dubey',
-      score: 3,
-    },
-    {
-      name: 'Aanchal Agarwal',
-      score: 2,
-    },
-    {
-      name: 'Saloni Gupta',
-      score: 2,
-    }
-  ];
   
-
   return (
     <div >
-      <StudentForm questions={questions} scores={highScores}/>
+      <StudentForm questions={questions}/>
       
     </div>
   );

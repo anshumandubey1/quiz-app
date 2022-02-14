@@ -1,2 +1,9 @@
 scopeconfig:
     - scope: node
+
+fileignoreconfig:
+- filename: src/components/HighScore.js
+  checksum: aa2bf427594ed79da113e330ef59c9cde20ce1375c56b726d47d6d8ed6e1edd5
+- filename: src/components/StudentForm.js
+  checksum: e27b75116fc99796348edcbc546a194dd765fa1ec3fa5697574d8a6de853608f
+version: ""

@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import HighScore from './HighScore';
+import './StudentForm.css';
 
 const StudentForm = ({questions}) => {
 
@@ -35,15 +36,15 @@ const StudentForm = ({questions}) => {
   )
 
   const questionBoard = (
-    <>
+    <div className='questionCard'>
       <div>
-        <div>
+        <div className='question-count'>
           <span>Question {currentQuestion + 1}</span>/{questions.length}
         </div>
         <div>{questions[currentQuestion].questionText}</div>
       </div><br /><div>
         {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-          <button key={index} onClick={() => giveScore(
+          <button className='btn' key={index} onClick={() => giveScore(
             questions[currentQuestion].answer, 
             answerOption.answerText
           )}>
@@ -52,16 +53,21 @@ const StudentForm = ({questions}) => {
         ))}
         <br />
       </div>
-    </>
+    </div>
       
   )
 
   const inputField = (
-    <div>
+    <div className='loginCard'>
+      <h1>The Harry Potter Trivia</h1>
+      <p>
+        Put your wizarding knowledge to the test with our Harry Potter Quiz!
+      </p>
+      {/* <hr/> */}
       <form onSubmit={() => setShowInput(false)}>
-        <label htmlFor='name'>Enter your name: </label>
-        <input type="text" onChange={(e) => setName(e.target.value)}></input>
-        <button type='submit'>Submit</button>
+        {/* <label htmlFor='name'>Enter your name: </label> */}
+        <input type="text" onChange={(e) => setName(e.target.value)} placeholder='Enter your name'></input>
+        <button type='submit' className='btn'>Start Quiz</button>
       </form>
       
     </div>

@@ -36,7 +36,7 @@ export default function App() {
   ];
   
   return (
-    <div >
+    <div className='app'>
       <StudentForm questions={questions}/>
       
     </div>

@@ -5,5 +5,5 @@ fileignoreconfig:
 - filename: src/components/HighScore.js
   checksum: aa2bf427594ed79da113e330ef59c9cde20ce1375c56b726d47d6d8ed6e1edd5
 - filename: src/components/StudentForm.js
-  checksum: e27b75116fc99796348edcbc546a194dd765fa1ec3fa5697574d8a6de853608f
+  checksum: 131774b9d9881a86042ada12aa7e652f65f995f0d61aabd05908721681e2127a
 version: ""

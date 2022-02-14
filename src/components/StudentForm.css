@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Harry Potter';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Harry Potter'), url('https://fonts.cdnfonts.com/s/25438/HARRP___.woff') format('woff');
+}
+
+
+
+.loginCard {
+  
+}
+
+.loginCard form input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  
+}
+
+hr {
+  height: 12px;
+  border: 0;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.questionCard {
+  font-size: 24px;
+}
+
+.questionCard .btn {
+  width: 100%;
+  font-size: 20px;
+
+}
+
+.loginCard .btn {
+  float: right;
+  font-family: 'Harry Potter', sans-serif;
+}
+
+.question-count span {
+  font-size: 28px;
+}
+
+.question-count {
+  margin-bottom: 16px;
+}

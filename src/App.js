@@ -35,11 +35,26 @@ export default function App() {
     },
   ];
 
+  const highScores = [
+    {
+      name: 'Anshuman Dubey',
+      score: 3,
+    },
+    {
+      name: 'Aanchal Agarwal',
+      score: 2,
+    },
+    {
+      name: 'Saloni Gupta',
+      score: 2,
+    }
+  ];
   
 
   return (
     <div >
-      <StudentForm questions={questions} />
+      <StudentForm questions={questions} scores={highScores}/>
+      
     </div>
   );
 }

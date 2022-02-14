@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
+import HighScore from './HighScore';
 
-const StudentForm = ({questions}) => {
+const StudentForm = ({questions,scores}) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -20,6 +21,7 @@ const StudentForm = ({questions}) => {
       setShowScore(true);
     }
   };
+
   
   return (
     <div>
@@ -27,8 +29,9 @@ const StudentForm = ({questions}) => {
         <>
           <div>
                   You scored {scoreObtained} out of {questions.length}
+                  
           </div>
-          <button>Show high scores</button>
+          <HighScore scores={scores}/>
         </>
       ) : (
         <>

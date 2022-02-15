@@ -41,7 +41,7 @@ const HighScore = (props) => {
   useEffect(() => {
     localStorage.setItem('highscores', JSON.stringify(scores));
   }, [scores]);
-  console.log(scores);
+  // console.log(scores);
 
   const showScore = scores.map((score,index)=>
     (<tr key={score.name}>
@@ -60,6 +60,11 @@ const HighScore = (props) => {
     </tr>));
   return (
     <div>
+      <div className='score-display'>
+          You scored {props.newScore} out of {props.questionsLength} in {props.timeTaken} seconds.
+              
+      </div>
+      <hr />
       <h1>Leaderboard</h1>
       <table className='leaderboard-results'>
         <thead>

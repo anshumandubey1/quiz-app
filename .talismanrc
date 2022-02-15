@@ -6,4 +6,6 @@ fileignoreconfig:
   checksum: aa2bf427594ed79da113e330ef59c9cde20ce1375c56b726d47d6d8ed6e1edd5
 - filename: src/components/StudentForm.js
   checksum: 131774b9d9881a86042ada12aa7e652f65f995f0d61aabd05908721681e2127a
+- filename: src/components/QuestionBoard.js
+  checksum: b2256b251a08feabd174808d6ce49abe9ebf28775fdad06a6de4b11e8bbdb1a4
 version: ""

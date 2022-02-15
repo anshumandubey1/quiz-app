@@ -9,18 +9,31 @@ const HighScore = (props) => {
       if(scores[i].name === props.name) {
         if(scores[i].score<props.newScore){
           scores[i].score = props.newScore;
-          found = true;
+          scores[i].time = props.timeTaken;
+        } else if (
+          scores[i].score==props.newScore &&
+          scores[i].time>props.timeTaken
+        ) {
+          scores[i].score = props.newScore;
+          scores[i].time = props.timeTaken;
         }
+        found = true;
       }
     }
     if (!found) {
       scores.push({
         name: props.name,
         score: props.newScore,
+        time: props.timeTaken
       });
     }
     
-    return scores.sort((a,b) =>  b.score-a.score).slice(0,5);
+    return scores.sort((a,b) => {
+      if(a.score==b.score) {
+        return a.time - b.time;
+      }
+      return b.score - a.score;
+    }).slice(0,5);
   }
     
   );
@@ -41,6 +54,9 @@ const HighScore = (props) => {
       <td>
         {score.score}
       </td>
+      <td>
+        {score.time}
+      </td>
     </tr>));
   return (
     <div>
@@ -51,6 +67,7 @@ const HighScore = (props) => {
             <th>Rank</th>
             <th>Name</th>
             <th>Score</th>
+            <th>Time</th>
           </tr>
         </thead>
         <tbody>

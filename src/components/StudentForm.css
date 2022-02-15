@@ -64,3 +64,13 @@ hr {
 .question-count {
   margin-bottom: 16px;
 }
+
+.timer{
+  float: right;
+  width: 80px;
+}
+
+.timer span{
+  width:50px;
+  margin-left: 5px;
+}

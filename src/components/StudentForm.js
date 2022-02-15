@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import HighScore from './HighScore';
 import './StudentForm.css';
 // import Timer from './Timer';
-//import {BsAlarmFill} from 'react-icons/bs'
+import {BsAlarmFill} from 'react-icons/bs'
 
 const StudentForm = ({questions}) => {
 
@@ -61,11 +61,11 @@ const StudentForm = ({questions}) => {
 
   const questionBoard = (
     <div className='questionCard'>
+      <div className='timer'><BsAlarmFill /> <span>{time}</span></div>
       <div>
         <div className='question-count'>
           <span>Question {currentQuestion + 1}</span>/{questions.length}
         </div>
-        <div className='timer'>Time Remaining: {time}</div>
         <div>{questions[currentQuestion].questionText}</div>
       </div><br /><div>
         {questions[currentQuestion].answerOptions.map((answerOption, index) => (

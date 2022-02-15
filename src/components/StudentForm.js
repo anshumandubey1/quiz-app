@@ -1,11 +1,19 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import HighScore from './HighScore';
 import './StudentForm.css';
 // import Timer from './Timer';
 import {BsAlarmFill} from 'react-icons/bs'
 
-const StudentForm = ({questions}) => {
+const StudentForm = () => {
+  const [questions, setQuestions] = useState([]);
 
+  useEffect(() => {
+    fetch('http://localhost:9000/')
+      .then( result => result.json())
+      .then( data => {
+        setQuestions(data);
+      });
+  }, [])
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [showInput, setShowInput] = useState(true);
@@ -59,7 +67,7 @@ const StudentForm = ({questions}) => {
 
 
 
-  const questionBoard = (
+  const questionBoard = questions.length==0? (<div></div>) : (
     <div className='questionCard'>
       <div className='timer'><BsAlarmFill /> <span>{time}</span></div>
       <div>
@@ -82,7 +90,8 @@ const StudentForm = ({questions}) => {
       
   )
 
-  const formSubmitted = () => {
+  const formSubmitted = (e) => {
+    e.preventDefault();
     setShowInput(false);
     startTimer();
   }
@@ -97,7 +106,7 @@ const StudentForm = ({questions}) => {
         Put your wizarding knowledge to the test with our Harry Potter Quiz!
       </p>
       {/* <hr/> */}
-      <form onSubmit={formSubmitted}>
+      <form onSubmit={ (e) => formSubmitted(e)}>
         {/* <label htmlFor='name'>Enter your name: </label> */}
         <input type="text" onChange={(e) => setName(e.target.value)} placeholder='Enter your name' required></input>
         <button type='submit' className='btn'>Start Quiz</button>
